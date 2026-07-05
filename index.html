@@ -33,7 +33,7 @@
     }
 
     const guestsRef = collection(db, eventId);
-    const q = query(guestsRef, where(hName", "==", input));
+    const q = query(guestsRef, where(Name", "==", input));
     const snapshot = await getDocs(q);
 
     if (snapshot.empty) {
