@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Your Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f3ee;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .card {
+      max-width: 420px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      background: #b89b5e;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .small {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Find Your Table</h1>
+    <p class="small">Enter your name to see your seating information.</p>
+
+    <input id="nameInput" type="text" placeholder="Example: Sara Ahmed" />
+    <button onclick="findGuest()">Search</button>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    const guests = [
+      { name: "Sara Ahmed", table: "Table 1" },
+      { name: "Ali Hassan", table: "Table 2" },
+      { name: "Mariam Osman", table: "Table 3" },
+      { name: "Omar Yusuf", table: "Table 4" }
+    ];
+
+    function normalize(text) {
+      return text
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, " ");
+    }
+
+    function findGuest() {
+      const input = normalize(document.getElementById("nameInput").value);
+      const resultDiv = document.getElementById("result");
+
+      if (!input) {
+        resultDiv.innerHTML = "Please enter your name.";
+        return;
+      }
+
+      const guest = guests.find(g => normalize(g.name) === input);
+
+      if (guest) {
+        resultDiv.innerHTML = `Welcome ${guest.name}!<br>You are seated at <strong>${guest.table}</strong>.`;
+      } else {
+        resultDiv.innerHTML = "We could not find your name. Please ask the host for help.";
+      }
+    }
+  </script>
+
+</body>
+</html>
