@@ -100,7 +100,7 @@
       const guest = guests.find(g => normalize(g.name) === input);
 
       if (guest) {
-        resultDiv.innerHTML = `Welcome ${guest.name}!<br>You are seated at <strong>${guest.table}</strong>.`;
+        resultDiv.innerHTML = `Welcome ${guest.name}!<br>You are seated at <strong>table ${guest.table}</strong>.`;
       } else {
         resultDiv.innerHTML = "We could not find your name. Please ask the host for help.";
       }
