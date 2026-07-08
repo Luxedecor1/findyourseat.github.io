@@ -1,0 +1,22 @@
+[
+  {
+    "name": "eva",
+    "table": 2,
+    "seat": 3
+  },
+  {
+    "name": "adam",
+    "table": 3,
+    "seat": 2
+  },
+  {
+    "name": "markus",
+    "table": 4,
+    "seat": 4
+  },
+  {
+    "name": "stefan",
+    "table": 2,
+    "seat": 1
+  }
+]
