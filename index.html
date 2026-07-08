@@ -72,12 +72,14 @@
   </div>
 
   <script>
-    const guests = [
-      { name: "Sara Ahmed", table: "Table 1" },
-      { name: "Ali Hassan", table: "Table 2" },
-      { name: "Mariam Osman", table: "Table 3" },
-      { name: "Omar Yusuf", table: "Table 4" },
-    ];
+    let guests = [];
+
+    async function loadGuests() {
+      const response = await fetch("guests.json");
+      guests = await response.json();
+    }
+    
+    loadGuests();
 
     function normalize(text) {
       return text
