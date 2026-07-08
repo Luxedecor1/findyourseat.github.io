@@ -1,22 +1,18 @@
-[
-  {
-    "name": "eva",
-    "table": 2,
-    "seat": 3
+[{
+    "name": "Eva",
+    "table": 3
   },
   {
-    "name": "adam",
-    "table": 3,
-    "seat": 2
+    "name": "Adam",
+    "table": 5
   },
   {
-    "name": "markus",
-    "table": 4,
-    "seat": 4
+    "name": "Hanna",
+    "table": 4
   },
   {
-    "name": "stefan",
-    "table": 2,
-    "seat": 1
+    "name": "Stefan",
+    "table": 2
   }
+]
 ]
