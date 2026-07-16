@@ -1,4 +1,4 @@
-import { loadGuests } from "/functions/load_guests.js";
+import { loadGuests } from "load_guests.js";
 
 window.loadGuestsForDate = async function () {
   const date = document.getElementById("dateInput").value;
