@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-07-16",
+    "guests": [
+      {
+        "name": "Eva",
+        "table": 3
+      },
+      {
+        "name": "Adam",
+        "table": 5
+      },
+      {
+        "name": "Hanna",
+        "table": 4
+      },
+      {
+        "name": "Stefan",
+        "table": 2
+      }
+    ]
+  },
+  {
+    "date": "2026-08-19",
+    "guests": [
+      {
+        "name": "Sara",
+        "table": 3
+      },
+      {
+        "name": "Magnus",
+        "table": 5
+      },
+      {
+        "name": "Hans",
+        "table": 4
+      },
+      {
+        "name": "Frank",
+        "table": 2
+      }
+    ]
+  }
+]
