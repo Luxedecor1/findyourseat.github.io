@@ -1,4 +1,4 @@
-import { loadGuests } from "load_guests.js";
+import { loadGuests } from "./load_guests.js";
 
 let guests = [];
 
