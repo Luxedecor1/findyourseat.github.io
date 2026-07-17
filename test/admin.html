@@ -7,17 +7,11 @@
     <link rel="stylesheet" href="../assets/style.css" />
   </head>
   <body>
+    <h1>Events</h1>
     <div class="card">
-      <h1>Admin test page</h1>
-      <label>
-        Select date:
-        <input id="dateInput" type="date" />
-      </label>
-      <button onclick="loadGuestsForDate()">Load guests</button>
-
-      <div id="adminResult"></div>
+      <select id="eventSelect"></select>
     </div>
-
+    <div id="adminResult"></div>
     <script type="module" src="../functions/admin.js"></script>
   </body>
 </html>

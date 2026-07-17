@@ -1,5 +1,49 @@
 [
   {
+    "date": "2026-07-16",
+    "guests": [
+      { "name": "Eva Andersson", "table": 1 },
+      { "name": "Johan Nilsson", "table": 1 },
+      { "name": "Maria Svensson", "table": 1 },
+      { "name": "Karl Eriksson", "table": 1 },
+
+      { "name": "Anna Larsson", "table": 2 },
+      { "name": "Peter Holm", "table": 2 },
+      { "name": "Linda Berg", "table": 2 },
+      { "name": "Oskar Lind", "table": 2 },
+
+      { "name": "Hanna Persson", "table": 3 },
+      { "name": "Magnus Åström", "table": 3 },
+      { "name": "Sara Johansson", "table": 3 },
+      { "name": "Daniel Ek", "table": 3 },
+
+      { "name": "Emma Olsson", "table": 4 },
+      { "name": "Fredrik Nyberg", "table": 4 },
+      { "name": "Lisa Wallin", "table": 4 },
+      { "name": "Henrik Dahl", "table": 4 },
+
+      { "name": "Camilla Sjöberg", "table": 5 },
+      { "name": "Stefan Lund", "table": 5 },
+      { "name": "Mikael Andersson", "table": 5 },
+      { "name": "Jenny Fors", "table": 5 },
+
+      { "name": "David Persson", "table": 6 },
+      { "name": "Sofia Holm", "table": 6 },
+      { "name": "Martin Nilsson", "table": 6 },
+      { "name": "Karin Ekström", "table": 6 },
+
+      { "name": "Erik Johansson", "table": 7 },
+      { "name": "Frida Lindberg", "table": 7 },
+      { "name": "Anton Berg", "table": 7 },
+      { "name": "Elin Sand", "table": 7 },
+
+      { "name": "Patrik Åkesson", "table": 8 },
+      { "name": "Monica Gustafsson", "table": 8 },
+      { "name": "Victor Lindqvist", "table": 8 },
+      { "name": "Therese Falk", "table": 8 }
+    ]
+  },
+  {
     "date": "2026-07-17",
     "guests": [
       {

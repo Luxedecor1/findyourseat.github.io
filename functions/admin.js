@@ -1,25 +1,78 @@
-import { loadGuests } from "./load_guests.js";
+import { loadGuests, loadEvents } from "./load_guests.js";
 
-window.loadGuestsForDate = async function () {
-  const date = document.getElementById("dateInput").value;
-  const resultDiv = document.getElementById("adminResult");
+const select = document.getElementById("eventSelect");
 
-  if (!date) {
-    resultDiv.textContent = "Please choose a date.";
-    return;
-  }
+async function init() {
+  const events = await loadEvents();
 
-  const guests = await loadGuests(date);
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = "Select an event";
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  placeholder.hidden = true;
 
-  if (guests.length === 0) {
-    resultDiv.textContent = "No guests found for that date.";
-    return;
-  }
+  select.appendChild(placeholder);
+
+  events.forEach((event) => {
+    const option = document.createElement("option");
+    option.value = event.date;
+    const prettyDate = new Date(event.date).toLocaleDateString(undefined, {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    option.textContent = prettyDate;
+    select.appendChild(option);
+  });
+}
+
+init();
+
+const resultDiv = document.getElementById("adminResult");
+
+select.addEventListener("change", async () => {
+  const guests = await loadGuests(select.value);
+
+  const tables = {};
+
+  guests.forEach((guest) => {
+    if (!tables[guest.table]) {
+      tables[guest.table] = [];
+    }
+
+    tables[guest.table].push(guest);
+  });
+  const numberOfTables = Object.keys(tables).length;
+
+  const summary = `
+  <div class="summary">
+    <strong>${guests.length}</strong> guests
+    &nbsp;•&nbsp;
+    <strong>${numberOfTables}</strong> tables
+  </div>
+`;
+
+  const html = Object.keys(tables)
+    .sort((a, b) => Number(a) - Number(b))
+    .map(
+      (table) => `
+    <div class="table-card">
+      <h2>Table ${table} <span class="guest-count">(${tables[table].length})</span></h2>
+
+      <ul>
+        ${tables[table].map((g) => `<li>${g.name}</li>`).join("")}
+      </ul>
+    </div>
+  `,
+    )
+    .join("");
 
   resultDiv.innerHTML = `
-    <p>Guests for ${date}:</p>
-    <ul>
-      ${guests.map((g) => `<li>${g.name} — table ${g.table}</li>`).join("")}
-    </ul>
+    ${summary}
+    <div class="tables-grid">
+      ${html}
+    </div>
   `;
-};
+});

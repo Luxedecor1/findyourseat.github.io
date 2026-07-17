@@ -18,7 +18,8 @@ h1 {
   margin-bottom: 10px;
 }
 
-input {
+input,
+select {
   width: 100%;
   padding: 14px;
   margin-top: 20px;
@@ -49,4 +50,66 @@ button {
 .small {
   color: #666;
   font-size: 14px;
+}
+
+.table-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 20px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  break-inside: avoid;
+}
+
+.table-card h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #b89b5e;
+  padding-bottom: 8px;
+}
+
+.table-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.table-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.table-card li:last-child {
+  border-bottom: none;
+}
+
+.summary {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+#adminResult {
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .card {
+    box-shadow: none;
+  }
+
+  button,
+  select {
+    display: none;
+  }
 }
